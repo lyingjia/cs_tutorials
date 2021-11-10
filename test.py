@@ -72,9 +72,7 @@ def main():
     w1 = Wizards(user, 100, 1000)
     w2 = Wizards(name2, 1000, 1000)
     Wizards.battle(w1,w2)
-   
+
+main()
     
-    
-if __name__ == '__main__':
-    main()
     
