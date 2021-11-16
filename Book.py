@@ -77,7 +77,7 @@ class Book():
         global self, opponent
         self = input("What's your name?\n").title()
         print("#"*WIDTH, file=f)
-        title = "Exploring the Wonder of Wizarding World!"
+        title = "Exploring the Wonders of Wizarding World"
         print("#"*int(WIDTH/2-len(title)/2) + title + "#"*int(WIDTH/2-len(title)/2), file=f)
         for _ in range(3):
             print("#"*WIDTH, file=f)
