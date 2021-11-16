@@ -12,8 +12,7 @@ DEFAULT_DAMAGE, DAMAGE_VARIANCE = 100, 50
 DEFAULT_HP, HP_VARIANCE = 1000, 100
 
 def cap_first_letter(string):
-    lst = [word[0].upper() + word[1:] for word in string.split()]
-    return " ".join(lst)
+    return string[0].upper() + string[1:]
 
 class House_of_Hogwarts():
     def __init__(self, name, house=None, adjective=None):
@@ -40,9 +39,9 @@ class Wizards(House_of_Hogwarts):
 
     def get_spell(self):
         adjective = cap_first_letter(self.adjective)
-        print(f"Yay! {adjective} {self.name} has aquired new skills!\n", file=f)
+        print(f"{adjective} {self.name} has aquired new skills!\n", file=f)
         print(f"{self.name}: \"{self.spell}!\"\n", file=f)
-        print(f"{self.name}'s damage at {self.damage} and hp at {self.hp} \n", file=f)
+        print(f"BOOM! {self.name}'s damage at {self.damage} and hp at {self.hp} \n", file=f)
 
     def attack(self, opponent):
         opponent.hp -= self.damage
@@ -59,7 +58,7 @@ class Wizards(House_of_Hogwarts):
         head = f"Chapter 4: Epic Wizard Duels: {self.name} vs {opponent.name}"
         print(head + "#"*(WIDTH - len(head))+"\n" + "#"*WIDTH +"\n", file=f)
         print(f"This is your final test at the Hogwarts School of Witchcraft and Wizardry.\n", file=f)
-        n = 1
+        n = 0
         while self.hp > 0 and opponent.hp > 0:
             win = self.attack(opponent)
             n += 1
@@ -84,12 +83,11 @@ class Book():
             print("#"*WIDTH, file=f)
         
         head = "Chapter 1: This is where it all begins"
-        print("\n" + "#"*WIDTH + head + "#"*(WIDTH - len(head))+"\n" + "#"*WIDTH +"\n", file=f)
-        print(f"Hi {self}, Welcome to the Wizarding world!\n", file=f)
+        print("\n" + "#"*WIDTH + "\n" + head + "#"*(WIDTH - len(head))+"\n" + "#"*WIDTH +"\n", file=f)
         opponent = Character[random.randint(0, 3)]
         print(f"{opponent}: \"Hi {self}, I am your companion for the advanture!\"\n", file=f)
-        
-        print(f"{opponent} and {self} have now entered the Hogwarts School of Witchcraft and Wizardry!\n", file=f)  
+        print(f"{self}: \"Hi {opponent}, can't wait, let's go!\"\n", file=f)
+        print(f"{opponent} and {self} have now entered the Hogwarts School of Witchcraft and Wizardry.\n", file=f)  
             
     # Chapter 2: The sorting hat 
     def chapter2():
@@ -97,7 +95,8 @@ class Book():
         print("#"*WIDTH, file=f)
         head = "Chapter 2: Sorting hat and the house of Hogwarts"
         print(head + "#"*(WIDTH - len(head))+"\n" + "#"*WIDTH +"\n", file=f)
-        
+        print("Once upon a time, Hogwarts was founded by four powerful wizards. It has been ever since with a yearly Sorting Ceremony.\n", file=f)
+        print("Sorting hat:\"Hmmm, this is not easy, let me think...\"\n", file=f)
         w1 = Wizards(self)
         w2 = Wizards(opponent)  
         w1.sorting_hat()

@@ -1,6 +1,8 @@
-# Demo
+# I'm a Book
 
-some descriptions!
+This book is not very interesting or useful, but it has magic!  
 
-## Subheading
+## Do you want to explore the wonders of magic? Come with me
+
+Run Book.py
 
